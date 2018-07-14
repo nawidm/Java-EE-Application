@@ -44,4 +44,8 @@ public class AccountRepositoryMap implements AccountRepository{
 		return "Account with id "+id+" has been removed";
 	}
 
+	public String getAllAccounts() {
+		return util.getJSONForObject(accMap.values());
+	}
+
 }

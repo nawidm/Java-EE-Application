@@ -1,6 +1,6 @@
 package accountApp;
 
-public interface AccountRepository {
+public interface AccountServiceInterface {
 
 	public String createAccount(String account);
 	public String updateAccount(Long id, String updatedAccount);

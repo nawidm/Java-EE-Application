@@ -18,6 +18,12 @@ public class Account {
 	@Column(length = 4)
 	private String accNumber;
 	
+	
+	
+	public Account() {
+		
+	}
+
 	public Account(String firstName, String surName, String accNumber) {
 		this.firstName = firstName;
 		this.surName = surName;

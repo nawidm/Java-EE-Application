@@ -1,13 +1,18 @@
 package accountApp;
 
+import java.util.Collection;
 import java.util.List;
 
+import javax.enterprise.inject.Default;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
+
+@Default
 @Transactional(Transactional.TxType.SUPPORTS)
 public class AccountRepositoryDB implements AccountRepository{
 	
@@ -49,9 +54,9 @@ public class AccountRepositoryDB implements AccountRepository{
 		return "Account with id "+id+" has been removed";
 	}
 	
-	public List<Account> findAll(){
-		TypedQuery<Account> query = em.createQuery(
-				"SELECT a FROM Account a ORDER BY a.firstName DESC", Account.class);
-		return query.getResultList();
+	public String getAllAccounts(){
+		Query query = em.createQuery("Select a FROM Account a");
+		Collection<Account> accounts = (Collection<Account>) query.getResultList();
+		return util.getJSONForObject(accounts);
 	}
 }
