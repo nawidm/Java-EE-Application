@@ -20,7 +20,7 @@ public class AccountService {
 
 	public String updateAccount(Long id, String updatedAccount) {
 		if(check.validateAccNumber(updatedAccount)) {
-			return repo.createAccount(updatedAccount);
+			return repo.updateAccount(id, updatedAccount);
 		} else {
 			return "Account with account number 9999 not allowed";
 		}

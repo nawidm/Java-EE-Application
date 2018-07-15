@@ -7,8 +7,8 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
 
-@ApplicationScoped
 @Alternative
+@ApplicationScoped
 public class AccountRepositoryMap implements AccountRepository{
 
 	private Long key;
@@ -26,13 +26,13 @@ public class AccountRepositoryMap implements AccountRepository{
 		key++;
 		Account acc = util.getObjectForJSON(accountJSON, Account.class);
 		accMap.put(key, acc);
-		return "Account has been created: "+accountJSON;
+		return "{\"Message\": \"Account Sucessfully Added\"}";
 	}
 
 	public String updateAccount(Long id, String updatedAccountJSON) {
 		Account updatedAccount = util.getObjectForJSON(updatedAccountJSON, Account.class);
 		accMap.put(id, updatedAccount);
-		return "Account with id "+id+" has been updated";
+		return "{\"Message\": \"Account Sucessfully Updated\"}";
 	}
 
 	public String findAccount(Long id) {
@@ -41,7 +41,7 @@ public class AccountRepositoryMap implements AccountRepository{
 
 	public String deleteAccount(Long id) {
 		accMap.remove(id);
-		return "Account with id "+id+" has been removed";
+		return "{\"Message\": \"Account Sucessfully Deleted\"}";
 	}
 
 	public String getAllAccounts() {
