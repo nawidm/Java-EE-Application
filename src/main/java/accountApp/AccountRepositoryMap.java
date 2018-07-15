@@ -25,12 +25,15 @@ public class AccountRepositoryMap implements AccountRepository{
 	public String createAccount(String accountJSON) {
 		key++;
 		Account acc = util.getObjectForJSON(accountJSON, Account.class);
+		acc.setId(key);
 		accMap.put(key, acc);
+
 		return "{\"Message\": \"Account Sucessfully Added\"}";
 	}
 
 	public String updateAccount(Long id, String updatedAccountJSON) {
 		Account updatedAccount = util.getObjectForJSON(updatedAccountJSON, Account.class);
+		updatedAccount.setId(id);
 		accMap.put(id, updatedAccount);
 		return "{\"Message\": \"Account Sucessfully Updated\"}";
 	}

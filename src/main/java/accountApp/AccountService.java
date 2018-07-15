@@ -14,7 +14,7 @@ public class AccountService {
 		if(check.validateAccNumber(account)) {
 			return repo.createAccount(account);
 		} else {
-			return "Account with account number 9999 not allowed";
+			return "{\"Message\": \"Account with account number 9999 not allowed\"}";
 		}
 	}
 
@@ -22,7 +22,7 @@ public class AccountService {
 		if(check.validateAccNumber(updatedAccount)) {
 			return repo.updateAccount(id, updatedAccount);
 		} else {
-			return "Account with account number 9999 not allowed";
+			return "{\"Message\": \"Account with account number 9999 not allowed\"}";
 		}
 	}
 
