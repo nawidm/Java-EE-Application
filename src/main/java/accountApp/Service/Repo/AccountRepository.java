@@ -1,4 +1,4 @@
-package accountApp;
+package accountApp.Service.Repo;
 
 public interface AccountRepository {
 

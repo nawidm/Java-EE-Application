@@ -1,4 +1,4 @@
-package accountApp;
+package accountApp.Domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

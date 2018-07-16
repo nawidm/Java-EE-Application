@@ -1,4 +1,4 @@
-package accountApp;
+package accountApp.Service.Repo;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -6,6 +6,9 @@ import java.util.Map;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Alternative;
 import javax.inject.Inject;
+
+import accountApp.Domain.Account;
+import accountApp.util.JSONUtil;
 
 @Alternative
 @ApplicationScoped

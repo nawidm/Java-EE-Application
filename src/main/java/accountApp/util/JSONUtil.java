@@ -1,4 +1,4 @@
-package accountApp;
+package accountApp.util;
 
 import com.google.gson.*;
 

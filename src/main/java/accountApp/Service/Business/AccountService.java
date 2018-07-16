@@ -1,6 +1,8 @@
-package accountApp;
+package accountApp.Service.Business;
 
 import javax.inject.Inject;
+
+import accountApp.Service.Repo.AccountRepository;
 
 public class AccountService {
 
