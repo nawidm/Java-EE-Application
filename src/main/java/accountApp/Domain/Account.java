@@ -19,7 +19,6 @@ public class Account {
 	private String accNumber;
 	
 	
-	
 	public Account() {
 		
 	}
